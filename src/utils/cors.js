@@ -7,7 +7,6 @@ const corsOptions = function (request, callback) {
     // Define the CORS options
     const corsOptions = {
         methods: ["POST", "GET", "PATCH", "DELETE", "PUT", "OPTIONS"], // Allowed HTTP methods
-        allowedHeaders: ["Content-Type", "Authorization"], // Allowed request headers
         origin: "*" // Allow requests from any origin (change as needed for specific origin policies)
     };
 
