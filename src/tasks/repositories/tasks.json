@@ -1,0 +1,9 @@
+[
+  {
+    "id": "8dcf6e04-392e-44ec-bae7-8eafe7eeb133",
+    "name": "Buy Groceries",
+    "description": "Should get groceries before the end of the day",
+    "priority": "MEDIUM",
+    "date": "2024-07-01T00:00:00.000Z"
+  }
+]

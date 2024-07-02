@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Todo App</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+	<div>
+		<header>
+			<nav class="navbar">
+				<div class="navbar__logo"><a class="navbar__logo-link" href="/">To-do App</a></div>
+			</nav>
+		</header>
+
+		<main class="container">
+			<div class="task-card task-card--large">
+				<div class="task-card__title">
+					<h2 class="task-card__title-heading">My Activities</h2>
+				</div>
+
+				<!-- <div id="no-tasks" class="task-card__no-tasks">
+					<div>
+						<img src="/assets/images/no-task.png" height="200px" />
+						<h3>No todo added.</h3>
+					</div>
+				</div> -->
+
+				<div class="task-card__tasks-list">
+					<div class="task-card__tasks-list-header">
+						<div>
+							<div class="search-task" id="search-task">
+								<h3>Filter by date:</h3>
+								<div class="search-task__field">
+									<input type="date" class="form-field__input search-task__input"
+										id="search-task-input" />
+								</div>
+							</div>
+						</div>
+
+						<div class="task-card__buttons">
+							<button class="button button--dark" id="add-task"><i class="fa fa-add"
+									aria-hidden="true"></i>
+								Add</button>
+						</div>
+					</div>
+
+					<div id="no-filtered-tasks" class="task-card__no-tasks">
+						<div>
+							<img src="/assets/images/no-task.png" height="200px" />
+							<h3>No Activities</h3>
+						</div>
+					</div>
+
+					<div class="task-card__todo-list" id="todo-list">
+						<table id="tasks" class="task-card__tasks">
+							<tr class="task-card__headers">
+								<th class="task-card__task-header">Date</th>
+								<th class="task-card__task-header">Activity</th>
+								<th class="task-card__task-header">Description</th>
+								<th class="task-card__task-header">Priority</th>
+								<th class="task-card__task-header">Actions</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+	<!-- Axios -->
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+	<script src="/js/list-tasks.js" type="module"></script>
+</body>
+
+</html>

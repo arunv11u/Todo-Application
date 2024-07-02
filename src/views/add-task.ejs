@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Todo App</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar">
+			<div class="navbar__logo"><a class="navbar__logo-link" href="/">Todo App</a></div>
+		</nav>
+	</header>
+
+	<main class="container">
+		<div class="task-card task-card--medium">
+			<h2 class="task-card__heading">Add</h2>
+
+			<form class="add-task-form">
+				<div class="form-field ">
+					<label class="form-field__label">Date<span class="red-text">*</span></label>
+					<input type="date" class="form-field__input" id="date" />
+					<p class="form-field-error" id="date-error"></p>
+				</div>
+
+				<div class="form-field">
+					<label class="form-field__label">Activity<span class="red-text">*</span></label>
+					<input type="text" class="form-field__input" id="name" />
+					<p class="form-field-error" id="name-error"></p>
+				</div>
+
+				<div class="form-field">
+					<label class="form-field__label">Description<span class="red-text">*</span></label>
+					<textarea class="form-field__input" rows="4" id="description"></textarea>
+					<p class="form-field-error" id="description-error"></p>
+				</div>
+
+				<div class="form-field">
+					<label class="form-field__label">Priority<span class="red-text">*</span></label>
+					<select class="form-field__input" id="priority">
+						<option class="form-field__input-option" value="">Select a priority</option>
+						<option class="form-field__input-option" value="LOW">Low</option>
+						<option class="form-field__input-option" value="MEDIUM">Medium</option>
+						<option class="form-field__input-option" value="HIGH">High</option>
+					</select>
+					<p class="form-field-error" id="priority-error"></p>
+				</div>
+
+				<div class="task__buttons">
+					<button type="button" class="button button--medium-dark" id="back-to-home-page">Back</button>
+					<button type="button" class="button button--dark" id="create-task">Create</button>
+				</div>
+				<div id="task_added_msg">
+				</div>
+			</form>
+		</div>
+
+
+	</main>
+
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+	<!-- Axios -->
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+	<script src="/js/add-task.js" type="module"></script>
+</body>
+
+</html>
