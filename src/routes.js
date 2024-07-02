@@ -6,7 +6,6 @@ const path = require("path");
 
 // Importing utility functions
 const {
-	corsOptions,
 	requestErrorHandler
 } = require("./utils");
 
@@ -18,7 +17,7 @@ function listen(app) {
 	app.enable("trust proxy");
 
 	// Enable CORS with options
-	app.use(cors(corsOptions));
+	app.use(cors());
 
 	// Parse JSON bodies
 	app.use(express.json());
