@@ -21,6 +21,12 @@
 		<header>
 			<nav class="navbar">
 				<div class="navbar__logo"><a class="navbar__logo-link" href="/">To-do App</a></div>
+
+				<div>
+					<button class="button button--dark" id="user-manual"><i class="fa fa-book-open"
+							aria-hidden="true"></i>
+						User Manual</button>
+				</div>
 			</nav>
 		</header>
 
@@ -29,13 +35,6 @@
 				<div class="task-card__title">
 					<h2 class="task-card__title-heading">My Activities</h2>
 				</div>
-
-				<!-- <div id="no-tasks" class="task-card__no-tasks">
-					<div>
-						<img src="/assets/images/no-task.png" height="200px" />
-						<h3>No todo added.</h3>
-					</div>
-				</div> -->
 
 				<div class="task-card__tasks-list">
 					<div class="task-card__tasks-list-header">
@@ -77,6 +76,23 @@
 				</div>
 			</div>
 		</main>
+	</div>
+
+	<!-- User Manual Modal -->
+	<div id="user-manual-modal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>User Manual</h2>
+			<p>Welcome to the Todo App! Here is how you can use the app:</p>
+			<ul class="user-manual__instructions">
+				<li><strong>Add Task:</strong> Click on the "Add" button to create a new task. Fill in the task details
+					and save.</li>
+				<li><strong>Filter Tasks:</strong> Use the date filter to view tasks for a specific date.</li>
+				<li><strong>Edit Task:</strong> Click on the "Edit" icon next to a task to modify its details.</li>
+				<li><strong>Delete Task:</strong> Click on the "Delete" icon next to a task to remove it.</li>
+				<li><strong>Priority:</strong> Assign a priority to each task to manage your workload effectively.</li>
+			</ul>
+		</div>
 	</div>
 
 	<!-- jquery -->
