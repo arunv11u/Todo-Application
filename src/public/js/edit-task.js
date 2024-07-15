@@ -19,8 +19,6 @@ $(async () => {
 	// Retrieve task details by ID
 	const task = await Task.get(id);
 
-	console.log("formatDate(task.date) ::", formatDate(task.date));
-
 	// Populate form fields with task details
 	$("#name").val(task.name);
 	$("#description").val(task.description);
@@ -74,8 +72,21 @@ $(async () => {
 		const priority = $("#priority").val();
 		const date = $("#date").val();
 
+		console.log("date ::", date);
+		const [year, month, day] = date.split("-");
+
+		const activityDate = new Date(
+			parseInt(year),
+			parseInt(month) - 1,
+			parseInt(day),
+			new Date().getHours(),
+			new Date().getMinutes(),
+			new Date().getSeconds(),
+			new Date().getMilliseconds()
+		);
+
 		// Create new task object with updated details
-		const task = new Task(name, description, priority, date);
+		const task = new Task(name, description, priority, activityDate);
 
 		// Variable to track if there are any validation errors
 		let isInvalidAddTaskForm = false;

@@ -73,12 +73,23 @@ $(() => {
 		const priority = $("#priority").val();
 		const date = $("#date").val();
 
+		const [year, month, day] = date.split("-");
+
+		const activityDate = new Date(
+			parseInt(year),
+			parseInt(month) - 1,
+			parseInt(day),
+			new Date().getHours(),
+			new Date().getMinutes(),
+			new Date().getSeconds(),
+			new Date().getMilliseconds()
+		);
 
 		const task = new Task(
 			name,
 			description,
 			priority,
-			date
+			activityDate
 		);
 
 		let isInvalidAddTaskForm = false;

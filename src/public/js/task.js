@@ -1,4 +1,5 @@
 const uri = "https://todo-application-q4ew.onrender.com";
+// const uri = "http://localhost:3000";
 
 // Class representing a task
 class Task {
@@ -24,6 +25,7 @@ class Task {
 			priority: this.priority,
 			date: this.date
 		};
+		console.log("task ::", task);
 
 		await axios.post(uri + "/task", task);
 	}
@@ -83,7 +85,7 @@ function validateTaskDate(date) {
 }
 
 function formatDate(date) {
-	return `${new Date(date).getFullYear().toString()}-${(new Date(date).getMonth()+1).toString().padStart(2, "0")}-${(new Date().getDate()).toString().padStart(2, "0")}`;
+	return `${new Date(date).getFullYear().toString()}-${(new Date(date).getMonth()+1).toString().padStart(2, "0")}-${(new Date(date).getDate()).toString().padStart(2, "0")}`;
 }
 
 // Exporting Task class and validation functions

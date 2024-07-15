@@ -31,7 +31,7 @@ $(async () => {
 
 		// Appending each task as a row in the tasks table
 		$("#tasks").append(`<tr class="task-card__task">
-		<td class="task-card__task-item">${formatDate(task.date)}</td>
+		<td class="task-card__task-item">${formatDate(new Date(task.date))}</td>
         <td class="task-card__task-item">${task.name}</td>
         <td class="task-card__task-item">${description}</td>
         <td class="task-card__task-item ${priorityStyle}">${task.priority}</td>
