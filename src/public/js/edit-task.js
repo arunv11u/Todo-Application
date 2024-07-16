@@ -7,9 +7,31 @@ import {
 	validateTaskDate,
 	formatDate
 } from "./task.js";
+import {
+	getDisplayContent
+} from "./display-content.js";
 
 // When the document is ready
 $(async () => {
+	const language = localStorage.getItem("language");
+
+	$("#title").text(getDisplayContent(language, "title"));
+	$("#edit").text(getDisplayContent(language, "edit"));
+	$("#date-txt").text(getDisplayContent(language, "date"));
+	$("#activity-txt").text(getDisplayContent(language, "activity"));
+	$("#description-txt").text(getDisplayContent(language, "description"));
+	$("#priority-txt").text(getDisplayContent(language, "priority"));
+	$("#back").text(getDisplayContent(language, "back"));
+	$("#delete").text(getDisplayContent(language, "delete"));
+	$("#update").text(getDisplayContent(language, "update"));
+	$("#select-a-priority").text(getDisplayContent(language, "selectAPriority"));
+	$("#low").text(getDisplayContent(language, "low"));
+	$("#medium").text(getDisplayContent(language, "medium"));
+	$("#high").text(getDisplayContent(language, "high"));
+	$("#status-txt").text(getDisplayContent(language, "status"));
+	$("#pending").text(getDisplayContent(language, "pending"));
+	$("#done").text(getDisplayContent(language, "done"));
+
 	$("#date").prop("min", formatDate(new Date()));
 	
 	// Extracting task ID from URL query parameter
@@ -24,6 +46,7 @@ $(async () => {
 	$("#description").val(task.description);
 	$("#priority").val(task.priority);
 	$("#date").val(formatDate(task.date));
+	$("#status").val(task.status);
 
 	// Event listener for name input field
 	$("#name").on("input", () => {
@@ -71,8 +94,8 @@ $(async () => {
 		const description = $("#description").val();
 		const priority = $("#priority").val();
 		const date = $("#date").val();
+		const status = $("#status").val();
 
-		console.log("date ::", date);
 		const [year, month, day] = date.split("-");
 
 		const activityDate = new Date(
@@ -86,7 +109,7 @@ $(async () => {
 		);
 
 		// Create new task object with updated details
-		const task = new Task(name, description, priority, activityDate);
+		const task = new Task(name, description, priority, activityDate, status);
 
 		// Variable to track if there are any validation errors
 		let isInvalidAddTaskForm = false;

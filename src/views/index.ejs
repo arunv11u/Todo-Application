@@ -20,12 +20,22 @@
 	<div>
 		<header>
 			<nav class="navbar">
-				<div class="navbar__logo"><a class="navbar__logo-link" href="/">To-do App</a></div>
+				<div class="navbar__logo"><a class="navbar__logo-link" href="/" id="title">To-do App</a></div>
 
-				<div>
-					<button class="button button--dark" id="user-manual"><i class="fa fa-book-open"
-							aria-hidden="true"></i>
-						User Manual</button>
+				<div class="navbar__content">
+					<div class="navbar__content-language">
+						<span>English</span>
+						<label class="switch">
+							<input type="checkbox" id="language-toggle">
+							<span class="slider round"></span>
+						</label>
+						<span>French</span>
+					</div>
+					<div>
+						<button class="button button--dark"><i class="fa fa-book-open"
+								aria-hidden="true"></i>
+							<span id="user-manual">User Manual</span></button>
+					</div>
 				</div>
 			</nav>
 		</header>
@@ -33,14 +43,14 @@
 		<main class="container">
 			<div class="task-card task-card--large">
 				<div class="task-card__title">
-					<h2 class="task-card__title-heading">My Activities</h2>
+					<h2 class="task-card__title-heading" id="my-activities">My Activities</h2>
 				</div>
 
 				<div class="task-card__tasks-list">
 					<div class="task-card__tasks-list-header">
 						<div>
 							<div class="search-task" id="search-task">
-								<h3>Filter by date:</h3>
+								<h3 id="filter-by-date">Filter by date:</h3>
 								<div class="search-task__field">
 									<input type="date" class="form-field__input search-task__input"
 										id="search-task-input" />
@@ -51,7 +61,7 @@
 						<div class="task-card__buttons">
 							<button class="button button--dark" id="add-task"><i class="fa fa-add"
 									aria-hidden="true"></i>
-								Add</button>
+								<span id="add">Add</span></button>
 						</div>
 					</div>
 
@@ -65,11 +75,13 @@
 					<div class="task-card__todo-list" id="todo-list">
 						<table id="tasks" class="task-card__tasks">
 							<tr class="task-card__headers">
-								<th class="task-card__task-header">Date</th>
-								<th class="task-card__task-header">Activity</th>
-								<th class="task-card__task-header">Description</th>
-								<th class="task-card__task-header">Priority</th>
-								<th class="task-card__task-header">Actions</th>
+								<th class="task-card__task-header" id="sNo">S.No</th>
+								<th class="task-card__task-header" id="date">Date</th>
+								<th class="task-card__task-header" id="activity">Activity</th>
+								<th class="task-card__task-header" id="description">Description</th>
+								<th class="task-card__task-header" id="priority">Priority</th>
+								<th class="task-card__task-header" id="status">Status</th>
+								<th class="task-card__task-header" id="actions">Actions</th>
 							</tr>
 						</table>
 					</div>

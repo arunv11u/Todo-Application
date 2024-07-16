@@ -76,7 +76,8 @@ router.put("/:id", [validateUpdateTaskInputs()], async (request, response, next)
 			name: request.body.name,
 			description: request.body.description,
 			priority: request.body.priority,
-			date: new Date(request.body.date)
+			date: new Date(request.body.date),
+			status: request.body.status
 		};
 
 		// Call updateTaskInteractor with extracted data

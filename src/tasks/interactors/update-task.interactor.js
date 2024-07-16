@@ -11,7 +11,8 @@ async function updateTaskInteractor(requestDTO) {
 		name: requestDTO.name,
 		description: requestDTO.description,
 		priority: requestDTO.priority,
-		date: requestDTO.date
+		date: requestDTO.date,
+		status: requestDTO.status
 	};
 
 	// Create a task repository instance
@@ -26,6 +27,7 @@ async function updateTaskInteractor(requestDTO) {
 	responseDTO.description = updatedTask.description;
 	responseDTO.priority = updatedTask.priority;
 	responseDTO.date = updatedTask.date;
+	responseDTO.status = updatedTask.status;
 
 	// Return the populated response DTO
 	return responseDTO;

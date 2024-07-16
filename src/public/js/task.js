@@ -1,5 +1,5 @@
-const uri = "https://todo-application-q4ew.onrender.com";
-// const uri = "http://localhost:3000";
+// const uri = "https://todo-application-q4ew.onrender.com";
+const uri = "http://localhost:3000";
 
 // Class representing a task
 class Task {
@@ -7,13 +7,15 @@ class Task {
 		name,
 		description,
 		priority,
-		date
+		date,
+		status
 	) {
 		// Initializing task properties
 		this.name = name;
 		this.description = description;
 		this.priority = priority;
 		this.date = date;
+		this.status = status;
 	}
 
 	// Method to create a new task
@@ -25,7 +27,6 @@ class Task {
 			priority: this.priority,
 			date: this.date
 		};
-		console.log("task ::", task);
 
 		await axios.post(uri + "/task", task);
 	}
@@ -52,7 +53,8 @@ class Task {
 			name: this.name,
 			description: this.description,
 			priority: this.priority,
-			date: this.date
+			date: this.date,
+			status: this.status
 		};
 
 		await axios.put(uri + `/task/${id}`, updatedtask);

@@ -25,6 +25,9 @@ const validateUpdateTaskInputs = () => {
 			if (!request.body.date)
 				throw new Error("Activity date is required");
 
+			if (!request.body.status)
+				throw new Error("Status is required");
+
 			// If all validations pass, call the next middleware
 			next();
 		} catch (error) {

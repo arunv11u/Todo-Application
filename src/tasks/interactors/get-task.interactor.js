@@ -17,6 +17,7 @@ async function getTaskInteractor(requestDTO) {
 	responseDTO.description = task.description;
 	responseDTO.priority = task.priority;
 	responseDTO.date = task.date;
+	responseDTO.status = task.status;
 
 	// Return the populated response DTO
 	return responseDTO;

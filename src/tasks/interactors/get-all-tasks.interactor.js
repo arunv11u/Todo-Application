@@ -18,7 +18,8 @@ async function getAllTasksInteractor() {
 			name: task.name,
 			description: task.description,
 			priority: task.priority,
-			date: task.date
+			date: task.date,
+			status: task.status
 		});
 	});
 

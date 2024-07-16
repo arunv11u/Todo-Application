@@ -16,7 +16,7 @@
 <body>
 	<header>
 		<nav class="navbar">
-			<div class="navbar__logo"><a class="navbar__logo-link" href="/">Task Management App</a></div>
+			<div class="navbar__logo"><a class="navbar__logo-link" href="/" id="title">To-do App</a></div>
 		</nav>
 	</header>
 
@@ -33,41 +33,50 @@
 		</div>
 
 		<div class="task-card task-card--medium">
-			<h2 class="task-card__heading">Edit</h2>
+			<h2 class="task-card__heading" id="edit">Edit</h2>
 
 			<form class="add-task-form">
 				<div class="form-field">
-					<label class="form-field__label">Date<span class="red-text">*</span></label>
+					<label class="form-field__label"><span id="date-txt">Date</span><span class="red-text">*</span></label>
 					<input type="date" class="form-field__input" id="date" />
 					<p class="form-field-error" id="date-error"></p>
 				</div>
 
 				<div class="form-field">
-					<label class="form-field__label">Activity<span class="red-text">*</span></label>
+					<label class="form-field__label"><span id="activity-txt">Activity</span><span class="red-text">*</span></label>
 					<input type="text" class="form-field__input" id="name" />
 					<p class="form-field-error" id="name-error"></p>
 				</div>
 
 				<div class="form-field">
-					<label class="form-field__label">Description<span class="red-text">*</span></label>
+					<label class="form-field__label"><span id="description-txt">Description</span><span class="red-text">*</span></label>
 					<textarea class="form-field__input" rows="4" id="description"></textarea>
 					<p class="form-field-error" id="description-error"></p>
 				</div>
 
 				<div class="form-field">
-					<label class="form-field__label">Priority<span class="red-text">*</span></label>
+					<label class="form-field__label"><span id="priority-txt">Priority</span><span class="red-text">*</span></label>
 					<select class="form-field__input" id="priority">
-						<option class="form-field__input-option" value="LOW">Low</option>
-						<option class="form-field__input-option" value="MEDIUM">Medium</option>
-						<option class="form-field__input-option" value="HIGH">High</option>
+						<option class="form-field__input-option" value="LOW" id="low">Low</option>
+						<option class="form-field__input-option" value="MEDIUM" id="medium">Medium</option>
+						<option class="form-field__input-option" value="HIGH" id="high">High</option>
 					</select>
 					<p class="form-field-error" id="priority-error"></p>
 				</div>
 
+				<div class="form-field">
+					<label class="form-field__label"><span id="status-txt">Status</span><span class="red-text">*</span></label>
+					<select class="form-field__input" id="status">
+						<option class="form-field__input-option" value="PENDING" id="pending">Pending</option>
+						<option class="form-field__input-option" value="DONE" id="done">Done</option>
+					</select>
+					<p class="form-field-error" id="status-error"></p>
+				</div>
+
 				<div class="task__buttons">
-					<button type="button" class="button button--dark" id="back-to-home-page">Back</button>
-					<button type="button" class="button button--medium-dark" id="delete-task">Delete</button>
-					<button type="button" class="button button--dark" id="update-task">Update</button>
+					<button type="button" class="button button--dark" id="back-to-home-page"><span id="back">Back</span></button>
+					<button type="button" class="button button--medium-dark" id="delete-task"><span id="delete">Delete</span></button>
+					<button type="button" class="button button--dark" id="update-task"><span id="update">Update</span></button>
 				</div>
 			</form>
 		</div>

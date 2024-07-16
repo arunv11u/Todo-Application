@@ -10,7 +10,8 @@ async function createTaskInteractor(requestDTO) {
 		name: requestDTO.name,
 		description: requestDTO.description,
 		priority: requestDTO.priority,
-		date: new Date(requestDTO.date)
+		date: new Date(requestDTO.date),
+		status: "PENDING"
 	};
 
 	// Create a task repository instance
@@ -25,6 +26,7 @@ async function createTaskInteractor(requestDTO) {
 	responseDTO.description = task.description;
 	responseDTO.priority = task.priority;
 	responseDTO.date = task.date;
+	responseDTO.status = task.status;
 
 	// Return the response DTO
 	return responseDTO;

@@ -8,6 +8,8 @@ import {
 	formatDate
 } from "./task.js";
 
+import { getDisplayContent } from "./display-content.js";
+
 // Function to reset the add task form fields
 function resetAddTaskForm() {
 	$("#name").val("");
@@ -18,6 +20,21 @@ function resetAddTaskForm() {
 
 // jQuery ready function
 $(() => {
+
+	const language = localStorage.getItem("language");
+
+	$("#title").text(getDisplayContent(language, "title"));
+	$("#add").text(getDisplayContent(language, "add"));
+	$("#date-txt").text(getDisplayContent(language, "date"));
+	$("#activity-txt").text(getDisplayContent(language, "activity"));
+	$("#description-txt").text(getDisplayContent(language, "description"));
+	$("#priority-txt").text(getDisplayContent(language, "priority"));
+	$("#back").text(getDisplayContent(language, "back"));
+	$("#create").text(getDisplayContent(language, "create"));
+	$("#select-a-priority").text(getDisplayContent(language, "selectAPriority"));
+	$("#low").text(getDisplayContent(language, "low"));
+	$("#medium").text(getDisplayContent(language, "medium"));
+	$("#high").text(getDisplayContent(language, "high"));
 
 	$("#date").prop("min", formatDate(new Date()));
 
@@ -89,7 +106,8 @@ $(() => {
 			name,
 			description,
 			priority,
-			activityDate
+			activityDate,
+			"PENDING"
 		);
 
 		let isInvalidAddTaskForm = false;
@@ -136,9 +154,14 @@ $(() => {
 		// Create the task
 		await task.create();
 
-		$("#task_added_msg")
+		const language = localStorage.getItem("language");
+
+		if (language === "french") $("#task_added_msg")
 			.html(`<div class="alert-msg"><p>task added successfully!</p>
-			<a href="/">show added task </a></div>`).show();
+			<a href="/">show added task</a></div>`).show();
+		else $("#task_added_msg")
+			.html(`<div class="alert-msg"><p>tâche ajoutée avec succès !</p>
+			<a href="/">afficher la tâche ajoutée</a></div>`).show();
 
 		setInterval(() => { $("#task_added_msg").hide() }, 1000);
 
