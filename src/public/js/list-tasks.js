@@ -62,7 +62,7 @@ $(async () => {
 		<td class="task-card__task-item">${index + 1}</td>
 		<td class="task-card__task-item">${formatDate(new Date(task.date))}</td>
         <td class="task-card__task-item">${task.name}</td>
-        <td class="task-card__task-item task-card__task-item-description">${description}${description}</td>
+        <td class="task-card__task-item task-card__task-item-description">${description}</td>
         <td class="task-card__task-item ${priorityStyle}">${task.priority}</td>
         <td class="task-card__task-item ${statusStyle}">${task.status}</td>
         <td class="task-card__task-item">
@@ -74,19 +74,21 @@ $(async () => {
 	// Event listener for clicking the "Search" button
 	$("#search-task-input").on("input", async () => {
 		const searchTextInput = $("#search-task-input").val();
-		console.log("searchTextInput ::", searchTextInput);
 
 		// Retrieving all tasks again
 		const tasks = await Task.getAll();
+		let filteredTasks = [...tasks];
 
-		// Creating a regular expression for searching tasks
-		const filteredTasks = tasks.filter((task) => {
-			// Filtering tasks based on search input
-			if (
-				formatDate(task.date) === searchTextInput
-			)
-				return task;
-		});
+		if(searchTextInput) {
+			// Creating a regular expression for searching tasks
+			filteredTasks = tasks.filter((task) => {
+				// Filtering tasks based on search input
+				if (
+					formatDate(task.date) === searchTextInput
+				)
+					return task;
+			});
+		}
 
 		// Handling display based on filtered tasks
 		if (filteredTasks.length) {

@@ -156,7 +156,7 @@ $(() => {
 
 		const language = localStorage.getItem("language");
 
-		if (language === "french") $("#task_added_msg")
+		if (language === "english") $("#task_added_msg")
 			.html(`<div class="alert-msg"><p>task added successfully!</p>
 			<a href="/">show added task</a></div>`).show();
 		else $("#task_added_msg")
